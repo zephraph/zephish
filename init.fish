@@ -18,7 +18,7 @@ if type -q starship
 end
 
 # Quick edit access for Zephish plugin
-abbr -a EZ code ~/.config/omf/zephish
+abbr -a EZ code ~/.local/share/omf/pkg/zephish
 
 # General abbreviations
 abbr -a c clear
