@@ -23,4 +23,4 @@ abbr -a EZ code ~/.local/share/omf/pkg/zephish
 # General abbreviations
 abbr -a c clear
 abbr -a e exit
-
+abbr -a gcopr git pr checkout
