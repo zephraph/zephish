@@ -22,5 +22,7 @@ begin
     # General abbreviations
     abrv c clear
     abrv e exit
+
+    # Git abbreviations
     abrv gcopr git pr checkout
 end
