@@ -1,0 +1,1 @@
+fish helpers/setup.fish

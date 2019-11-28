@@ -1,0 +1,1 @@
+fish helpers/abbrs.fish uninstall
