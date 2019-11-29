@@ -10,8 +10,6 @@
 
 <br/>
 
-`zephish` is the home for my fish configuration.
-
 ## Install
 
 ```fish
