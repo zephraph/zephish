@@ -1,8 +1,9 @@
+&nbsp;
 <img src="https://user-images.githubusercontent.com/3087225/69846163-3768a300-1241-11ea-8ff2-9b2eedf71d8f.png" align="left" />
 
-#### zephish
+# Zephish
 
-> A plugin for [Oh My Fish][omf-link].
+> [Zephraph](https://github.com/zephraph)'s dotfiles, but as a plugin for [Oh My Fish][omf-link].
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v2.2.0-007EC7.svg?style=flat-square)](https://fishshell.com)
