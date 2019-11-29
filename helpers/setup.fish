@@ -21,6 +21,9 @@ switch (uname)
         if not type -q bat
             brew install bat
         end
+        if not type -q starship
+            brew install starship
+        end
     case "*"
         echo "This platform won't have everything. PRs welcome."
 end
