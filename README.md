@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/3087225/69846842-5700cb00-1243-11ea-974f-daaeae594d39.png" align="left" />
+<img src="https://user-images.githubusercontent.com/3087225/69847296-b4494c00-1244-11ea-969c-fce5bed4d253.png" align="left" />
 
 # Zephish
 
