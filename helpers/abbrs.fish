@@ -10,7 +10,6 @@ begin
     end
 
     while read -la line
-        set -lx line (string trim $line)
         if test "$line[1]" = "#"
             or test -z "$line"
             continue

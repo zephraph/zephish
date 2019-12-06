@@ -7,3 +7,6 @@ e exit
 
 # Git abbreviations
 gcopr git pr checkout
+
+# Shorten nvm
+n nvm use --delete-prefix
