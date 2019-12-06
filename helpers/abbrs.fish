@@ -1,3 +1,4 @@
+# This helper script either installs or uninstalls the abbreviations found in abbrs
 begin
     set -lx action $argv[1]
     set -lx context (tint: 778899 [zephish/(status --current-filename)])
@@ -8,21 +9,17 @@ begin
         exit 1
     end
 
-    function abrv
-        if test $action = "install"
-            abbr -a $argv
-        else
-            abbr -e $argv[1]
+    while read -la line
+        set -lx line (string trim $line)
+        if test "$line[1]" = "#"
+            or test -z "$line"
+            continue
         end
-    end
+        if test $action = "install"
+            abbr -a $line
+        else
+            abbr -e $line[1]
+        end
+    end <abbreviations
 
-    # Quick edit access for Zephish plugin
-    abrv EZ code ~/.local/share/omf/pkg/zephish
-
-    # General abbreviations
-    abrv c clear
-    abrv e exit
-
-    # Git abbreviations
-    abrv gcopr git pr checkout
 end

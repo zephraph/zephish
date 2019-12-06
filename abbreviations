@@ -1,0 +1,9 @@
+# Quick edit access for Zephish plugin
+EZ code ~/.local/share/omf/pkg/zephish
+
+# General abbreviations
+c clear
+e exit
+
+# Git abbreviations
+gcopr git pr checkout
