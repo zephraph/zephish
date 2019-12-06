@@ -15,6 +15,9 @@ switch (uname)
         if not type -q brew
             /usr/bin/ruby -e "(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         end
+        if not type -q hub
+            brew install hub
+        end
         if not type -q exa
             brew install exa
         end
