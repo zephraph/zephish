@@ -18,6 +18,9 @@ switch (uname)
         if not type -q hub
             brew install hub
         end
+        if not type -q gh
+            brew install github/gh/gh
+        end
         if not type -q exa
             brew install exa
         end
