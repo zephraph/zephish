@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-set PATH ./node_modules/.bin $PATH
+set PATH ./node_modules/.bin ~/go/bin $PATH
 
 if type -q starship
     starship init fish | source
