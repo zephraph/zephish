@@ -1,7 +1,7 @@
 package bang-bang
 package https://github.com/jhillyerd/plugin-git
 package https://github.com/zephraph/yarn
+package hub
 package nvm
 package technicolor
-package hub
 package z
