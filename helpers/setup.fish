@@ -27,6 +27,9 @@ switch (uname)
         if not type -q bat
             brew install bat
         end
+        if not type -q fd
+            brew install fd
+        end
         if not type -q starship
             brew install starship
         end
@@ -53,6 +56,9 @@ switch (uname)
         end
         if not type -q exa
             cargo install --locked exa
+        end
+        if not type -q fd
+            cargo install --locked fd-find
         end
     case "*"
         echo "This platform won't have everything. PRs welcome."
