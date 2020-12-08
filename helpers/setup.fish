@@ -30,6 +30,30 @@ switch (uname)
         if not type -q starship
             brew install starship
         end
+    case Linux
+        sudo apt-get update
+        if not dpkg -s build-essential
+            sudo apt-get install build-essential
+        end
+        if not type -q hub
+            wget -O hub.tgz https://github.com/github/hub/releases/download/v2.14.2/hub-linux-amd64-2.14.2.tgz
+            tar zxvf hub.tgz
+            rm hub.tgz
+            sudo ./hub-linux-amd64-2.14.2/install
+            rm -rf hub-linux-amd64-2.14.2
+        end
+        if not type -q starship
+            curl -fsSL https://starship.rs/install.sh | bash
+        end
+        if not type -q cargo
+            curl https://sh.rustup.rs -sSf | sh
+        end
+        if not type -q bat
+            cargo install --locked bat
+        end
+        if not type -q exa
+            cargo install --locked exa
+        end
     case "*"
         echo "This platform won't have everything. PRs welcome."
 end

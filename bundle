@@ -1,6 +1,7 @@
 package bang-bang
 package https://github.com/jhillyerd/plugin-git
 package https://github.com/zephraph/yarn
+package https://github.com/jorgebucaran/nvm.fish
 package hub
 package nvm
 package technicolor
