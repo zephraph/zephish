@@ -18,7 +18,7 @@ switch (uname)
         set CFLAGS "-I(brew --prefix zlib)/include -I(brew --prefix sqlite)/include -I(brew --prefix bzip2)/include"
         set LDFLAGS "-L(brew --prefix zlib)/lib -L(brew --prefix sqlite)/lib -L(brew --prefix bzip2)/lib"
     case Linux
-        if type -d /home/linuxbrew/.linuxbrew
+        if test -d /home/linuxbrew/.linuxbrew
             set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew";
             set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar";
             set -gx HOMEBREW_REPOSITORY "/home/linuxbrew/.linuxbrew/Homebrew";
