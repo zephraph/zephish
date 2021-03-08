@@ -15,3 +15,6 @@ gcopr git pr checkout
 
 # Shorten nvm
 n nvm use --delete-prefix
+
+# Git remove merged branches
+grmb git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d
