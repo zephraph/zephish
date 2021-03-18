@@ -9,7 +9,7 @@ end
 # Install a git hook to automatically update after pulling/merging
 if not test -f .git/hooks/post-merge
   cp templates/post-merge .git/hooks/post-merge
-  chmod +x ./git/hooks/post-merge
+  chmod +x .git/hooks/post-merge
 end
 
 fish helpers/abbrs.fish install
