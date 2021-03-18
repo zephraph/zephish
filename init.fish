@@ -32,4 +32,4 @@ if type -q starship
     starship init fish | source
 end
 
-eval (ssh-agent -c)
+eval (ssh-agent -c >/dev/null 2>&1)
