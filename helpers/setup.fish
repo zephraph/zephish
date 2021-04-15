@@ -8,8 +8,8 @@ end
 
 # Install a git hook to automatically update after pulling/merging
 if not test -f .git/hooks/post-merge
-  cp templates/post-merge .git/hooks/post-merge
-  chmod +x .git/hooks/post-merge
+    cp templates/post-merge .git/hooks/post-merge
+    chmod +x .git/hooks/post-merge
 end
 
 fish helpers/abbrs.fish install
@@ -38,6 +38,11 @@ switch (uname)
         end
         if not type -q starship
             brew install starship
+        end
+        if not type -d ~/.asdf
+            git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+            cd ~/.asdf
+            git checkout "(git describe --abbrev=0 --tags)"
         end
     case Linux
         sudo apt-get update
