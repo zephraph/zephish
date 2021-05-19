@@ -39,6 +39,11 @@ switch (uname)
         if not type -q starship
             brew install starship
         end
+        if not type -q delta
+            brew install git-delta
+            git config --global core.pager delta
+            git config --global delta.syntax-theme Nord
+        end
         if not type -d ~/.asdf
             git clone https://github.com/asdf-vm/asdf.git ~/.asdf
             cd ~/.asdf
@@ -70,6 +75,11 @@ switch (uname)
         end
         if not type -q fd
             cargo install --locked fd-find
+        end
+        if not type -q delta
+            cargo install --locked git-delta
+            git config --global core.pager delta
+            git config --global delta.syntax-theme Nord
         end
     case "*"
         echo "This platform won't have everything. PRs welcome."
