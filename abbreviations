@@ -25,3 +25,4 @@ ad add --dev
 i install
 u uninstall
 r run
+rd run dev
