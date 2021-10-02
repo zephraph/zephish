@@ -18,3 +18,8 @@ n nvm use --delete-prefix
 
 # Git remove merged branches
 grmb git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d
+
+a add
+ad add --dev
+i install
+r run

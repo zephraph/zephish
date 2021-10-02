@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-set PATH ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin $PATH
+set PATH ./node_modules/.bin ./lua_modules/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin $PATH
 
 switch (uname)
     case Darwin
