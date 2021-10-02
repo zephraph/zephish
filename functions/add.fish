@@ -4,7 +4,8 @@ function add --description "Add a dependency for a given package manager"
 
   if test -n "$_flag_dev"
     if test -f yarn.lock
-      yarn add --save-dev $argv
+      echo "yarn add --dev $argv"
+      yarn add --dev $argv
     else if test -f pnpm-lock.yaml
       pnpm add --save-dev $argv
     else if test -f package-lock.json
