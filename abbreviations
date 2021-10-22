@@ -11,7 +11,7 @@ c clear
 e exit
 
 # Git abbreviations
-gcopr git pr checkout
+gcopr gh pr checkout
 
 # Shorten nvm
 n nvm use --delete-prefix
