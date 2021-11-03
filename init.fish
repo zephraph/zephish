@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-set PATH ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin $PATH
+fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
 
 switch (uname)
     case Darwin
@@ -19,6 +19,9 @@ switch (uname)
         set LDFLAGS "-L(brew --prefix zlib)/lib -L(brew --prefix sqlite)/lib -L(brew --prefix bzip2)/lib"
         source ~/.asdf/asdf.fish
     case Linux
+        if test -d ~/usr/local/Applications/android-studio/bin
+            fish_add_path ~/Applications/android-studio/bin
+        end
         if test -d /home/linuxbrew/.linuxbrew
             set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
             set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
