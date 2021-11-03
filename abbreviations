@@ -11,10 +11,18 @@ c clear
 e exit
 
 # Git abbreviations
-gcopr git pr checkout
+gcopr gh pr checkout
 
 # Shorten nvm
 n nvm use --delete-prefix
 
 # Git remove merged branches
 grmb git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d
+
+# Helpers for package manager interop
+a add
+ad add --dev
+i install
+u uninstall
+r run
+rd run dev
