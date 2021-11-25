@@ -33,6 +33,7 @@ switch (uname)
             set -q INFOPATH; or set INFOPATH ''
             set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
         end
+        export RUSTDOCFLAGS="-Clink-args=-Wl,-R$(pg_config --libdir)"
 end
 
 if type -q starship
