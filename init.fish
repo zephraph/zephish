@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-set PATH ./node_modules/.bin ./lua_modules/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin $PATH
+fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
 
 switch (uname)
     case Darwin
@@ -20,6 +20,9 @@ switch (uname)
         source ~/.asdf/asdf.fish
     case Linux
         set PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/home/linuxbrew/.linuxbrew/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
+        if test -d ~/usr/local/Applications/android-studio/bin
+            fish_add_path ~/Applications/android-studio/bin
+        end
         if test -d /home/linuxbrew/.linuxbrew
             set -gx HOMEBREW_PREFIX "/home/linuxbrew/.linuxbrew"
             set -gx HOMEBREW_CELLAR "/home/linuxbrew/.linuxbrew/Cellar"
@@ -31,6 +34,7 @@ switch (uname)
             set -q INFOPATH; or set INFOPATH ''
             set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
         end
+        export RUSTDOCFLAGS="-Clink-args=-Wl,-R(pg_config --libdir)"
 end
 
 if type -q starship

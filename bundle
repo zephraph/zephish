@@ -1,8 +1,8 @@
-package bang-bang
-package https://github.com/jhillyerd/plugin-git
-package https://github.com/zephraph/yarn
 package asdf
-package hub
+package bang-bang
+package foreign-env
+package https://github.com/jhillyerd/plugin-git
+package https://github.com/lilyball/nix-env.fish
+package https://github.com/zephraph/yarn
 package technicolor
 package z
-package foreign-env
