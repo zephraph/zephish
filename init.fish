@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
+fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin ~/oxide/lengths-of-wire/hiring-cli/target/release/hiring-cli
 
 switch (uname)
     case Darwin
