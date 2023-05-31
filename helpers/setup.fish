@@ -41,7 +41,7 @@ switch (uname)
             git config --global core.pager delta
             git config --global delta.syntax-theme Nord
         end
-        if not type -d ~/.asdf
+        if not test -d ~/.asdf
             git clone https://github.com/asdf-vm/asdf.git ~/.asdf
             cd ~/.asdf
             git checkout "(git describe --abbrev=0 --tags)"
