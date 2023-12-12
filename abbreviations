@@ -30,3 +30,12 @@ i install
 u uninstall
 r run
 rd run dev
+
+# Shorten atuin command given I can never remember how to spell it
+h atuin
+
+# Use zoxide over cd
+cd z
+
+# Rust
+cb cargo build

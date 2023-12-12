@@ -78,6 +78,9 @@ switch (uname)
             git config --global core.pager delta
             git config --global delta.syntax-theme Nord
         end
+        if not type -q zoxide
+            cargo install zoxide --locked
+        end
     case "*"
         echo "This platform won't have everything. PRs welcome."
 end
