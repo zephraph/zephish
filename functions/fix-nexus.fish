@@ -3,8 +3,8 @@ function fix-nexus --description "Update Nexus's dependencies when a compile fai
     OSTYPE=linux-gnu tools/ci_download_maghemite_mgd
 
     # Add these to the path
-    set -gx DENDRITE_BIN_DIR /Users/just-be/Oxide/omicron/out/dendrite-stub/bin
-    set -gx MGD_BIN_DIR /Users/just-be/Oxide/omicron/out/mgd/root/opt/oxide/mgd/bin
+    set -gx DENDRITE_BIN_DIR $PWD/out/dendrite-stub/root/opt/oxide/dendrite/bin
+    set -gx MGD_BIN_DIR $PWD/out/mgd/root/opt/oxide/mgd/bin
 
     readenv tools/dendrite_openapi_version
     set -l DENDRITE_COMMIT "$COMMIT"
@@ -25,4 +25,12 @@ function fix-nexus --description "Update Nexus's dependencies when a compile fai
     cargo build -p mgd --release --no-default-features
     cp target/release/mgd "$MGD_BIN_DIR/mgd"
     cd -
+
+    ./tools/ci_download_maghemite_openapi
+    ./tools/ci_download_dendrite_openapi
+
+    # Make sure path is cleaned up
+    if set -l index (contains -i $PWD/out/dendrite-stub/bin $PATH)
+        set -e PATH[$index]
+    end
 end
