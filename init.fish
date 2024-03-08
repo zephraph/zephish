@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin ~/oxide/lengths-of-wire/hiring-cli/target/release/hiring-cli
+fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
 
 switch (uname)
     case Darwin
@@ -18,7 +18,7 @@ switch (uname)
         set CFLAGS "-I(brew --prefix zlib)/include -I(brew --prefix sqlite)/include -I(brew --prefix bzip2)/include"
         set LDFLAGS "-L(brew --prefix zlib)/lib -L(brew --prefix sqlite)/lib -L(brew --prefix bzip2)/lib"
         source ~/.asdf/asdf.fish
-        fish_add_path ~/Code/deno.run/.run ~/Oxide/omicron/out/dendrite-stub/bin ~/Oxide/omicron/out/mgd/root/opt/oxide/mgd/bin ~/Scripts ~/Applications /opt/local/bin
+        fish_add_path ~/Code/deno.run/.run ~/Scripts ~/Applications /opt/local/bin
     case Linux
         set PKG_CONFIG_PATH "/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/home/linuxbrew/.linuxbrew/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig"
         if test -d ~/usr/local/Applications/android-studio/bin
