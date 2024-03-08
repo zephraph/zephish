@@ -39,3 +39,6 @@ cd z
 
 # Rust
 cb cargo build
+
+# Use ai as a shortcut for mods
+ai mods

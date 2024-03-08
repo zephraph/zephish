@@ -46,6 +46,9 @@ switch (uname)
             cd ~/.asdf
             git checkout "(git describe --abbrev=0 --tags)"
         end
+        if not type -q mods
+            brew install charmbracelet/tap/mods
+        end
     case Linux
         sudo apt-get update
         if not dpkg -s build-essential
@@ -80,6 +83,12 @@ switch (uname)
         end
         if not type -q zoxide
             cargo install zoxide --locked
+        end
+        if not type -q go
+            sudo apt-get install golang-go
+        end
+        if not type -q mods
+            go install github.com/charmbracelet/mods@latest
         end
     case "*"
         echo "This platform won't have everything. PRs welcome."
