@@ -1,6 +1,6 @@
-<img src="https://user-images.githubusercontent.com/3087225/69847296-b4494c00-1244-11ea-969c-fce5bed4d253.png" align="left" />
-
 # Zephish
+
+<img src="https://user-images.githubusercontent.com/3087225/69847296-b4494c00-1244-11ea-969c-fce5bed4d253.png" align="right" />
 
 > [Zephraph](https://github.com/zephraph)'s dotfiles, but as a plugin for [Oh My Fish][omf-link].
 
