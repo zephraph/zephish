@@ -10,6 +10,9 @@
 
 fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
 
+# Fix for GPG TTY error
+set -gx GPG_TTY (tty)
+
 switch (uname)
     case Darwin
         # Hack to ensure python builds will work
