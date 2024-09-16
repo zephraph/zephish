@@ -8,13 +8,15 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
+fish_add_path ./node_modules/.bin ./.deno/bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
 
 # Fix for GPG TTY error
 set -gx GPG_TTY (tty)
+set -gx EDITOR (which cursor)
 
 switch (uname)
     case Darwin
+        readenv ~/.deno/.env
         # Hack to ensure python builds will work
         # https://github.com/pyenv/pyenv/issues/1219#issuecomment-684140087
         set PYTHON_CONFIGURE_OPTS "--with-openssl=(brew --prefix openssl)"
