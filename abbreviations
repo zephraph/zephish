@@ -22,7 +22,7 @@ gcopr gh pr checkout
 n nvm use --delete-prefix
 
 # Git remove merged branches
-grmb git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d
+grmb git rm-merged
 
 # Helpers for package manager interop
 a add

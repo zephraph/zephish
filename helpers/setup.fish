@@ -14,6 +14,9 @@ end
 
 fish helpers/abbrs.fish install
 
+# Alias to remove merged branches
+git config --global alias.rm-merged '!git branch --format '\''%(refname:short) %(upstream:track)'\'' | awk '\''$2 == "[gone]" { print $1 }'\'' | xargs -r git branch -D'
+
 # Platform specific setup
 switch (uname)
     case Darwin
