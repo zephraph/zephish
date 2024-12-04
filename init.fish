@@ -8,7 +8,7 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-fish_add_path ./node_modules/.bin ./.deno/bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin ~/.deno/bin
+fish_add_path ./node_modules/.bin ./lua_modules/bin ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin
 
 # Fix for GPG TTY error
 set -gx GPG_TTY (tty)
@@ -16,7 +16,6 @@ set -gx EDITOR (which cursor)
 
 switch (uname)
     case Darwin
-        readenv ~/.deno/.env
         # Hack to ensure python builds will work
         # https://github.com/pyenv/pyenv/issues/1219#issuecomment-684140087
         set PYTHON_CONFIGURE_OPTS "--with-openssl=(brew --prefix openssl)"
@@ -47,3 +46,73 @@ if type -q starship
 end
 
 eval (ssh-agent -c >/dev/null 2>&1)
+
+set -gx MISE_SHELL fish
+set -gx __MISE_ORIG_PATH $PATH
+
+function mise
+    if test (count $argv) -eq 0
+        command /Users/just-be/.local/bin/mise
+        return
+    end
+
+    set command $argv[1]
+    set -e argv[1]
+
+    if contains -- --help $argv
+        command /Users/just-be/.local/bin/mise "$command" $argv
+        return $status
+    end
+
+    switch "$command"
+        case deactivate shell sh
+            # if help is requested, don't eval
+            if contains -- -h $argv
+                command /Users/just-be/.local/bin/mise "$command" $argv
+            else if contains -- --help $argv
+                command /Users/just-be/.local/bin/mise "$command" $argv
+            else
+                source (command /Users/just-be/.local/bin/mise "$command" $argv |psub)
+            end
+        case '*'
+            command /Users/just-be/.local/bin/mise "$command" $argv
+    end
+end
+
+function __mise_env_eval --on-event fish_prompt --description 'Update mise environment when changing directories'
+    /Users/just-be/.local/bin/mise hook-env -s fish | source
+
+    if test "$mise_fish_mode" != disable_arrow
+        function __mise_cd_hook --on-variable PWD --description 'Update mise environment when changing directories'
+            if test "$mise_fish_mode" = eval_after_arrow
+                set -g __mise_env_again 0
+            else
+                /Users/just-be/.local/bin/mise hook-env -s fish | source
+            end
+        end
+    end
+end
+
+function __mise_env_eval_2 --on-event fish_preexec --description 'Update mise environment when changing directories'
+    if set -q __mise_env_again
+        set -e __mise_env_again
+        /Users/just-be/.local/bin/mise hook-env -s fish | source
+        echo
+    end
+
+    functions --erase __mise_cd_hook
+end
+if functions -q fish_command_not_found; and not functions -q __mise_fish_command_not_found
+    functions -e __mise_fish_command_not_found
+    functions -c fish_command_not_found __mise_fish_command_not_found
+end
+
+function fish_command_not_found
+    if /Users/just-be/.local/bin/mise hook-not-found -s fish -- $argv[1]
+        /Users/just-be/.local/bin/mise hook-env -s fish | source
+    else if functions -q __mise_fish_command_not_found
+        __mise_fish_command_not_found $argv
+    else
+        __fish_default_command_not_found_handler $argv
+    end
+end
