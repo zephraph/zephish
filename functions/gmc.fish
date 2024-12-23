@@ -22,6 +22,8 @@ function gmc --description "Move git commit to another branch"
         if test (count $argv) -ge 2
             echo "Error: Branch '$new_branch' already exists and base branch was specified"
             return 1
+        else
+            git checkout $new_branch
         end
     else
         # Create new branch from base_branch
