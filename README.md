@@ -14,7 +14,7 @@
 
 - Silences the fish welcome command
 - Installs [brew](https://brew.sh/) if it isn't present
-- Installs [exa](https://github.com/ogham/exa) and aliases it to `ls`
+- Installs [eza](https://github.com/eza-community/eza) and aliases it to `ls`
 - Installs [bat](https://github.com/sharkdp/bat) and aliases it to `cat`
 - Installs [starship](https://github.com/starship/starship) and sets it as the default prompt
 - Adds omf plugin [bang-bang](https://github.com/oh-my-fish/plugin-bang-bang) so `!! sudo` will rerun the last command with sudo

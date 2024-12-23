@@ -27,8 +27,8 @@ switch (uname)
         if not type -q gh
             brew install github/gh/gh
         end
-        if not type -q exa
-            brew install exa
+        if not type -q eza
+            brew install eza
         end
         if not type -q bat
             brew install bat
@@ -68,8 +68,8 @@ switch (uname)
         if not type -q bat
             cargo install --locked bat
         end
-        if not type -q exa
-            cargo install --locked exa
+        if not type -q eza
+            cargo install --locked eza
         end
         if not type -q fd
             cargo install --locked fd-find
