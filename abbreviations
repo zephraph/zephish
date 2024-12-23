@@ -43,3 +43,6 @@ cb cargo build
 
 # Use ai as a shortcut for mods
 ai mods
+
+# Mise
+mr mise run
