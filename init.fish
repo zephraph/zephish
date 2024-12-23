@@ -10,11 +10,6 @@
 
 fish_add_path ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin
 
-# Add local node_modules bin to PATH if not already present
-if not contains "./node_modules/.bin" $PATH
-    set -gx PATH "./node_modules/.bin" $PATH
-end
-
 # Fix for GPG TTY error
 set -gx GPG_TTY (tty)
 set -gx EDITOR (which cursor)
