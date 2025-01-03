@@ -2,10 +2,6 @@
 
 set -U fish_greeting ""
 
-if type -q code
-    set -U EDITOR "code -w"
-end
-
 # Install a git hook to automatically update after pulling/merging
 if not test -f .git/hooks/post-merge
     cp templates/post-merge .git/hooks/post-merge
