@@ -1,6 +1,6 @@
 # zephish initialization hook
 #
-# WARNING: Stuff in this file gets run everytime a new 
+# WARNING: Stuff in this file gets run everytime a new
 # shell is created. Limit it to the absolute minimum required.
 #
 # You can use the following variables in this file:
@@ -8,11 +8,18 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
+# I'm cursed and this is the penance I pay for my sins
+set -gx PATH (string match -v "*/node_modules/.bin" $PATH)
+
 fish_add_path ~/go/bin ~/.cargo/bin ~/.bin /usr/local/Cellar/apache-spark/1.5.2/bin
 
 # Fix for GPG TTY error
 set -gx GPG_TTY (tty)
-set -gx EDITOR (which cursor)
+set -gx EDITOR (which zed)
+
+if type -q starship
+    starship init fish | source
+end
 
 switch (uname)
     case Darwin
@@ -39,10 +46,6 @@ switch (uname)
             set -gx INFOPATH "/home/linuxbrew/.linuxbrew/share/info" $INFOPATH
         end
         export RUSTDOCFLAGS="-Clink-args=-Wl,-R(pg_config --libdir)"
-end
-
-if type -q starship
-    starship init fish | source
 end
 
 if type -q mise

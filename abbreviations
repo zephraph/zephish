@@ -1,4 +1,4 @@
-# This file contains all the custom fish abbreviations that I enable. 
+# This file contains all the custom fish abbreviations that I enable.
 # The helpers/abbrs.fish script reads it in and passes each non-comment
 # line to abbr with --add or --erase depending on if it's during an install
 # or uninstall
@@ -8,8 +8,8 @@
 # be loaded on shell start
 
 # Quick edit access for Zephish plugin
-ce cursor
-EZ cursor ~/.local/share/omf/pkg/zephish
+f zed
+EZ zed ~/.local/share/omf/pkg/zephish
 
 # General abbreviations
 c clear
